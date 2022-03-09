@@ -22,22 +22,17 @@ int main()
     }
 
     int score = 0;
-    int ptr1, ptr2;
 
     for (int i = 0; i < N; i++)
     {
-        sort(arr[i].begin(), arr[i].end());
+        k = operations[i];
 
-        ptr1 = arr[i].size() - 2 * operations[i];
-        ptr2 = arr[i].size() - operations[i];
+        sort(arr[i].begin(), arr[i].end(), greater<int>());
 
-        while (ptr1 < ptr2)
-        {
-            score += floor(arr[i][ptr1] / arr[i][ptr2]);
-            ptr1++;
-            ptr2--;
-        }
-        for (int j = 0; j < arr[i].size() - 2 * operations[i]; j++)
+        for (int j = 0; j < k; j++)
+            score += floor(arr[i][k + j] / arr[i][j]);
+
+        for (int j = 0; j < arr[i].size() - 2 * k; j++)
             score += arr[i][j];
         cout << score << endl;
         score = 0;
