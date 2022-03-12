@@ -38,7 +38,7 @@ void findPath(TreeNode *node, int b, vector<int> &ans, bool &flag)
         findPath(node->right, b, ans, flag);
     if (flag)
         return;
-    ans.erase(ans.begin() + ans.size() - 1);
+    ans.pop_back();
     return;
 }
 
