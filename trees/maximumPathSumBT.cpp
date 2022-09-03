@@ -30,6 +30,26 @@ struct TreeNode
 class Solution
 {
 public:
+    int findMaxPathSum(TreeNode *node, int &maxi)
+    {
+        if (node == NULL)
+            return 0;
+
+        int left = max(0, findMaxPathSum(node->left, maxi));
+        int right = max(0, findMaxPathSum(node->right, maxi));
+
+        maxi = max(maxi, left + right + node->val);
+
+        return node->val + max(left, right);
+    }
+
+    int maxPathSum(TreeNode *root)
+    {
+        if (!root)
+            return 0;
+        int maxi = INT_MIN;
+    }
+
     // maxSum is for storing the max path sum at every node
     //  at every node we calculate nodeSum with is the max of
     //  the currNode value plus maximum path sum in leftSubtree,
@@ -49,33 +69,33 @@ public:
 
     // final answer is the maximum in these two
 
-    int maxSum = INT_MIN;
-    int maxTreeSum = INT_MIN;
+    //     int maxSum = INT_MIN;
+    //     int maxTreeSum = INT_MIN;
 
-    int findSum(TreeNode *node, bool isRoot)
-    {
-        if (node == NULL)
-            return 0;
+    //     int findSum(TreeNode *node, bool isRoot)
+    //     {
+    //         if (node == NULL)
+    //             return 0;
 
-        int leftSum = node->val + findSum(node->left, false);
-        int rightSum = node->val + findSum(node->right, false);
+    //         int leftSum = node->val + findSum(node->left, false);
+    //         int rightSum = node->val + findSum(node->right, false);
 
-        int nodeSum = max({leftSum, rightSum, node->val});
-        maxSum = max(maxSum, nodeSum);
-        maxTreeSum = max(maxTreeSum, leftSum + rightSum - node->val);
+    //         int nodeSum = max({leftSum, rightSum, node->val});
+    //         maxSum = max(maxSum, nodeSum);
+    //         maxTreeSum = max(maxTreeSum, leftSum + rightSum - node->val);
 
-        if (nodeSum < 0)
-            return 0;
-        return nodeSum;
-    }
+    //         if (nodeSum < 0)
+    //             return 0;
+    //         return nodeSum;
+    //     }
 
-    int maxPathSum(TreeNode *root)
-    {
-        if (root == NULL)
-            return 0;
-        bool isRoot = true;
-        findSum(root, isRoot);
+    //     int maxPathSum(TreeNode *root)
+    //     {
+    //         if (root == NULL)
+    //             return 0;
+    //         bool isRoot = true;
+    //         findSum(root, isRoot);
 
-        return max(maxSum, maxTreeSum);
-    }
-};
+    //         return max(maxSum, maxTreeSum);
+    //     }
+    // };

@@ -33,42 +33,59 @@ struct TreeNode
 class Solution
 {
 public:
-    bool flag = true;
+    //     bool flag = true;
 
-    void checkBalanced(TreeNode *node, int &height)
+    //     void checkBalanced(TreeNode* node,int& height) {
+    //         if(node == NULL) return;
+
+    //         height++;
+    //         int temp = height;
+
+    //         // finding left height
+    //         checkBalanced(node->left,height);
+    //         int leftHeight = height;
+    //         if(!flag) return;
+    //         height = temp;
+
+    //         // finding right height
+    //         checkBalanced(node->right,height);
+    //         int rightHeight = height;
+    //         if(!flag) return;
+
+    //         if(abs(leftHeight-rightHeight) > 1) flag = false;
+
+    //         height = max(leftHeight,rightHeight);
+    //         return;
+    //     }
+
+    int checkBalanced(TreeNode *node, bool &flag)
     {
         if (node == NULL)
-            return;
+            return 0;
 
-        height++;
-        int temp = height;
-
-        // finding left height
-        checkBalanced(node->left, height);
-        int leftHeight = height;
+        int leftHeight = checkBalanced(node->left, flag);
         if (!flag)
-            return;
-        height = temp;
+            return -1;
 
-        // finding right height
-        checkBalanced(node->right, height);
-        int rightHeight = height;
+        int rightHeight = checkBalanced(node->right, flag);
         if (!flag)
-            return;
+            return -1;
 
         if (abs(leftHeight - rightHeight) > 1)
             flag = false;
 
-        height = max(leftHeight, rightHeight);
-        return;
+        return 1 + max(leftHeight, rightHeight);
     }
 
     bool isBalanced(TreeNode *root)
     {
+        // if(root == NULL) return flag;
+        // int height = 0;
+        // checkBalanced(root,height);
         if (root == NULL)
-            return flag;
-        int height = 0;
-        checkBalanced(root, height);
+            return true;
+        bool flag = true;
+        checkBalanced(root, flag);
         return flag;
     }
 };

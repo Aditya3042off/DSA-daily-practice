@@ -25,8 +25,7 @@ public:
     {
         if (head == NULL || head->next == NULL || k == 0)
             return head;
-        ListNode *end, *temp1, *temp2 = head;
-        end = head;
+        ListNode *temp1;
         temp1 = head;
         int size = 1;
         // finding size of linkedlist
@@ -39,19 +38,22 @@ public:
         if (k == 0)
             return head;
 
-        for (int i = 1; i < k; i++)
-            end = end->next;
-        while (end->next != NULL)
-        {
-            temp2 = temp2->next;
-            end = end->next;
-        }
+        int count = 1;
+        ListNode *newHead, *newEnd;
         temp1 = head;
-        while (temp1->next != temp2)
+
+        while (temp1->next != NULL)
+        {
+            if (count == size - k)
+            {
+                newEnd = temp1;
+                newHead = temp1->next;
+            }
+            count++;
             temp1 = temp1->next;
-        end->next = head;
-        head = temp2;
-        temp1->next = NULL;
-        return head;
+        }
+        temp1->next = head;
+        newEnd->next = NULL;
+        return newHead;
     }
 };

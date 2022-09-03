@@ -21,7 +21,8 @@
 // Explanation: Since there are already no fresh oranges at minute 0, the answer is just 0.
 
 // https://www.youtube.com/watch?v=pBU2Lh7gspQ&list=PLN4aKSfpk8TQwHTE3ZAz6felbFY2UcLYR&index=2
-
+#include<bits/stdc++.h>
+using namespace std;
 class Solution
 {
 public:

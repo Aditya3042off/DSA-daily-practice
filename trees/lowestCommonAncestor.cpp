@@ -13,6 +13,7 @@
 // Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself according to the LCA definition.
 
 // https://www.youtube.com/watch?v=_-QHfMDde90&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=28&t=180s
+// https://practice.geeksforgeeks.org/problems/lowest-common-ancestor-in-a-binary-tree/1#
 
 #include <bits/stdc++.h>
 using namespace std;

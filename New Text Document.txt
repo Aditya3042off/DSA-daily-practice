@@ -1,2 +1,7 @@
 https://www.linkedin.com/posts/riti2409_notesbyriti-programmer-github-activity-6902192178320523264-KBg2
 https://codeforces.com/blog/entry/65133
+https://leetcode.com/problems/maximum-length-of-repeated-subarray/discuss/109059/O(mn)-time-O(1)-space-solution
+https://leetcode.com/problems/reverse-pairs/discuss/97268/General-principles-behind-problems-similar-to-%22Reverse-Pairs%22
+https://leetcode.com/problems/maximum-candies-allocated-to-k-children/discuss/1908862/Binary_Search-oror-Intutive-oror-Intution-Explanation
+https://leetcode.com/problems/maximum-candies-allocated-to-k-children/discuss/1908888/JavaC%2B%2BPython-Binary-Search-with-Explanation
+https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/discuss/769698/Python-Clear-explanation-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems.

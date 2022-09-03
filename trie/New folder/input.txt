@@ -1,0 +1,7 @@
+6
+I app 2
+I a 1
+I apple 10
+Q app
+U apple 7
+Q app

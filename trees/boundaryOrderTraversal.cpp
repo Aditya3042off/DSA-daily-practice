@@ -6,6 +6,7 @@
 // Note: If the root doesn't have a left subtree or right subtree, then the root itself is the left or right boundary.
 
 // https://www.youtube.com/watch?v=0ca1nvR0be4&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=21
+// https://www.lintcode.com/problem/878
 
 #include <bits/stdc++.h>
 using namespace std;

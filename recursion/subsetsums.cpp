@@ -57,4 +57,4 @@ public:
         sort(sums.begin(), sums.end());
         return sums;
     }
-}
+};

@@ -35,12 +35,9 @@ public:
 
         ListNode *fastPtr = head;
         ListNode *slowPtr = head;
-        while (fastPtr->next != NULL)
+        while (fastPtr->next != NULL or fastPtr != NULL)
         {
-            fastPtr = fastPtr->next;
-            if (fastPtr->next == NULL)
-                return slowPtr->next;
-            fastPtr = fastPtr->next;
+            fastPtr = fastPtr->next->next;
             slowPtr = slowPtr->next;
         }
         return slowPtr;

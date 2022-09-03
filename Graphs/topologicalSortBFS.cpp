@@ -17,7 +17,7 @@ void topoSort(vector<int> list[], int v, vector<int> &indegree, vector<int> &top
         for (int adj : list[curr])
         {
             indegree[adj]--;
-            if (!indegree[adj])
+            if (indegree[adj] == 0)
                 q.push(adj);
         }
     }

@@ -41,34 +41,37 @@ using namespace std;
 class Solution
 {
 public:
-    void solve(vector<vector<int>> &m, vector<string> &ans, string s, int x, int y)
+    void solve(vector<vector<int>> &m, vector<string> &ans, string path, int x, int y)
     {
-        if (x == m.size() - 1 and y == m.size() - 1 and m[x][y] != 0)
+        int n = m.size();
+        if (x < 0 or x >= n or y < 0 or y >= n)
+            return;
+        if (x == n - 1 and y == n - 1)
         {
-            ans.push_back(s);
+            ans.push_back(path);
             return;
         }
-        if (x > m.size() - 1 || y > m.size() - 1 || x < 0 || y < 0)
+
+        // m[x][y] = -1 means that cell is already visited;
+        if (m[x][y] == 0 or m[x][y] == -1)
             return;
 
-        if (m[x][y] == 0 || m[x][y] == -1)
-            return;
+        m[x][y] = -1;
 
-        m[x][y] = -1; // representation of a visited node
-
-        solve(m, ans, s + 'U', x - 1, y);
-        solve(m, ans, s + 'D', x + 1, y);
-        solve(m, ans, s + 'L', x, y - 1);
-        solve(m, ans, s + 'R', x, y + 1);
+        solve(m, ans, path + 'D', x + 1, y);
+        solve(m, ans, path + 'L', x, y - 1);
+        solve(m, ans, path + 'R', x, y + 1);
+        solve(m, ans, path + 'U', x - 1, y);
 
         m[x][y] = 1;
-
         return;
     }
 
     vector<string> findPath(vector<vector<int>> &m, int n)
     {
         // Your code goes here
+        if (m[0][0] == 0 or m[n - 1][n - 1] == 0)
+            return {"-1"};
         vector<string> ans;
         solve(m, ans, "", 0, 0);
         if (!ans.size())

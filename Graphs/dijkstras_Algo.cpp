@@ -1,6 +1,31 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// void normalWay(vector<pair<int, int>> graph[], vector<int> &dist, int src)
+// {
+//     queue<int> q;
+//     q.push(src);
+
+//     while (!q.empty())
+//     {
+//         int node = q.front();
+//         q.pop();
+
+//         for (auto temp : graph[node])
+//         {
+//             int adjNode = temp.first;
+//             int adjDist = temp.second;
+
+//             if (dist[adjNode] > dist[node] + adjDist)
+//             {
+//                 dist[adjNode] = dist[node] + adjDist;
+//                 q.push(adjNode);
+//             }
+//         }
+//         return;
+//     }
+// }
+
 void dijkstra(vector<pair<int, int>> graph[], vector<int> &dist, int src)
 {
     pair<int, int> temp;
@@ -40,6 +65,7 @@ int main()
     dist[0] = 0;
 
     dijkstra(graph, dist, 0);
+    // normalWay(graph, dist, 0);
 
     for (int i : dist)
         cout << i << " ";

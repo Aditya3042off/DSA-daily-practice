@@ -77,7 +77,7 @@
 // Query 8: "bc" is inserted
 // Query 9: "false" is printed as no word is present having the prefix "bcda"
 // Query 10: "true" is printed as "bc" is present
-
+// https://leetcode.com/problems/implement-trie-prefix-tree/
 // https://www.youtube.com/watch?v=dBGUmUQhjaM&list=PLgUwDviBIf0pcIDCZnxhv0LkHf5KzG9zp&index=1&ab_channel=takeUforward
 // https://www.codingninjas.com/codestudio/problems/implement-trie_631356?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_tries_videos&leftPanelTab=0
 
@@ -88,6 +88,9 @@
     bool check2 = obj->search(word);
     bool check3 = obj->startsWith(prefix);
  */
+
+#include <bits/stdc++.h>
+using namespace std;
 struct Node
 {
     Node *links[26];
@@ -153,11 +156,7 @@ public:
             }
             node = node->get(word[i]);
         }
-        if (node->isEnd())
-        {
-            return true;
-        }
-        return false;
+        return node->isEnd();
     }
 
     /** Returns if there is any word in the trie that starts with the given prefix. */

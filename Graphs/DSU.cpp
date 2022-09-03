@@ -55,7 +55,7 @@ public:
 
         if (rank[pu] > rank[pv])
         {
-            parent[pv] = parent[pu];
+            parent[pv] = pu;
         }
         else if (rank[pv] > rank[pu])
         {
