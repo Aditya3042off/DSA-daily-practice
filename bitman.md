@@ -1,4 +1,5 @@
 "https://www.youtube.com/watch?v=5rtVTYAk9KQ&list=PLN4aKSfpk8TQq8ySZsy266qAWBnR2sN0G&index=1&t=5440s"
+"https://www.youtube.com/watch?v=klnI-RDIc6U&list=PLjeQ9Mb66hM0ewIZ50zJKoU8v8Wc-ODTt&index=2"
 
 ## swap 2 numbers using XOR
 ```
@@ -7,6 +8,17 @@
 		a = a^b;        a = 5^7
 		b = a^b;		b = 5^7^7 = 5
 		a = a^b;		a = 5^7^5 = 7
+	}
+```
+
+## get the index of first set bit from left / last set bit from right
+```
+	{
+		let number be n
+		index of first set bit is floor(log2(n)) -> 0-based indexing from right
+		
+		this can be extended to find total number of bits required to represent this number n in binary
+		-> floor(log2(n)) + 1
 	}
 ```
 

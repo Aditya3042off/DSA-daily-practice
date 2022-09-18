@@ -5,3 +5,6 @@ https://leetcode.com/problems/reverse-pairs/discuss/97268/General-principles-beh
 https://leetcode.com/problems/maximum-candies-allocated-to-k-children/discuss/1908862/Binary_Search-oror-Intutive-oror-Intution-Explanation
 https://leetcode.com/problems/maximum-candies-allocated-to-k-children/discuss/1908888/JavaC%2B%2BPython-Binary-Search-with-Explanation
 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/discuss/769698/Python-Clear-explanation-Powerful-Ultimate-Binary-Search-Template.-Solved-many-problems.
+https://leetcode.com/problems/range-sum-query-2d-immutable/discuss/75350/Clean-C%2B%2B-Solution-and-Explaination-O(mn)-space-with-O(1)-time
+https://leetcode.com/problems/find-the-winner-of-the-circular-game/discuss/1152585/O(n)-greaterO(klg(n))-with-table-explanation
+https://leetcode.com/problems/single-number-ii/discuss/43295/Detailed-explanation-and-generalization-of-the-bitwise-operation-method-for-single-numbers

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void conquer(int arr[], int start, int mid, int end)
+void merge(int arr[], int start, int mid, int end)
 {
     int size = end - start + 1;
 
@@ -26,17 +26,17 @@ void conquer(int arr[], int start, int mid, int end)
         arr[j] = temp[i];
 }
 
-void divide(int arr[], int start, int end)
+void mergeSort(int arr[], int start, int end)
 {
     if (start >= end)
         return;
 
     int mid = (start + end) / 2;
 
-    divide(arr, start, mid);
-    divide(arr, mid + 1, end);
+    mergeSort(arr, start, mid);
+    mergeSort(arr, mid + 1, end);
 
-    conquer(arr, start, mid, end);
+    merge(arr, start, mid, end);
 }
 
 int main()
@@ -50,7 +50,7 @@ int main()
     // for (int i = 0; i < n; i++)
     // cin >> arr[i];
 
-    divide(arr, 0, n - 1);
+    mergeSort(arr, 0, n - 1);
 
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
